@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="total_credit_card_limit" placeholder="Total Credit Card Limit" required="required" />
+        <input type="text" name="avg_percentage_credit_card_limit_used_last_year" placeholder="Avg_percentage_credit_card_limit_used_last_year" required="required" />
+		<input type="text" name="saving_amount" placeholder="Saving_amount" required="required" />
+		<input type="text" name="checking_amount" placeholder="Checking_amount" required="required" />
+		<input type="text" name="yearly_salary" placeholder="Yearly_salary" required="required" />
+		<input type="text" name="age" placeholder="Age" required="required" />
+		<input type="text" name="dependent_number" placeholder="Dependent_number" required="required" />
+		
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
